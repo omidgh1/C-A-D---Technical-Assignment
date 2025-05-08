@@ -202,3 +202,12 @@ All endpoints require authentication using the API key defined in your ```.env``
 - Ensure that your ```.env``` file is configured correctly to run the Docker.
 - If running in Docker, ensure you have the ```docker-compose.yml``` file in your project directory.
 - The docker-compose.yml file should define the services, such as the API and PostgreSQL database, and how they are connected.
+
+## 🔒 Security Considerations
+Note: The .env file is included in this repository intentionally for ease of testing during the assignment review. In a real-world application, the following best practices should be applied:
+- Do not commit .env files or any sensitive credentials to version control. Use .gitignore to exclude them.
+- Use a secrets manager (e.g., AWS Secrets Manager, Vault, or GitHub Actions secrets) to securely store API keys and database credentials.
+- Restrict database access and use a least-privilege user account.
+- Always serve APIs over HTTPS to encrypt data in transit.
+- Secure API keys by rotating them regularly and applying rate limits.
+- In Docker, avoid exposing internal services publicly and store secrets outside of images.
